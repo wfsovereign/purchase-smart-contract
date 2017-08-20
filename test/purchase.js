@@ -52,7 +52,7 @@ contract('Purchase', function(accounts) {
         });
     });
 
-    xit("should be able to confirm received", function() {
+    it("should be able to confirm received", function() {
         var passedInValue = 2;
         var purchase;
         var watcher;
@@ -102,7 +102,7 @@ contract('Purchase', function(accounts) {
         });
     });
 
-    xit("should be able to abort purchase and reclaim the ether", function() {
+    it("should be able to abort purchase and reclaim the ether", function() {
         var purchase;
         var watcher;
         var notSeller = accounts[2];
