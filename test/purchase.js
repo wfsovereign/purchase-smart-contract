@@ -22,7 +22,7 @@ contract('Purchase', function(accounts) {
         });
     });
 
-    xit("should be able to confirm a purchase", function() {
+    it("should be able to confirm a purchase", function() {
         var purchase;
         var watcher;
         return Purchase.new({from: seller, value: 2}).then(function(instance) {

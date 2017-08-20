@@ -3,8 +3,14 @@ pragma solidity ^0.4.11;
 
 contract Purchase {
     address public seller;
+    address public buyer;
     uint public value;
-    uint public state;
+    State public state;
+
+    enum  State {
+        Created,
+        Locked
+    }
 
     struct CommonParams {
         address from;
@@ -14,12 +20,35 @@ contract Purchase {
     function Purchase() payable {
         seller = msg.sender; 
         value = msg.value / 2;
-        state = 0;
-
+        require((value * 2) == msg.value);
     }
 
-    function confirmPurchase() {
-        
+    modifier onlySeller() {
+        require(msg.sender == seller);
+        _;
+    }
+
+    modifier onlyBuyer() {
+        require(msg.sender == buyer);
+        _;
+    }
+
+    modifier condition(bool _condition) {
+        require(_condition);
+        _;
+    }
+
+    event PurchaseConfirmed();
+
+    function confirmPurchase()
+     condition((value * 2) == msg.value) payable 
+    {
+        PurchaseConfirmed();
+        buyer = msg.sender;
+        state = State.Locked;
+
+
+
     }
 
 }
