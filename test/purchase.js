@@ -22,7 +22,7 @@ contract('Purchase', function(accounts) {
         });
     });
 
-    it("should be able to confirm a purchase", function() {
+    xit("should be able to confirm a purchase", function() {
         var purchase;
         var watcher;
         return Purchase.new({from: seller, value: 2}).then(function(instance) {
@@ -52,7 +52,7 @@ contract('Purchase', function(accounts) {
         });
     });
 
-    it("should be able to confirm received", function() {
+    xit("should be able to confirm received", function() {
         var passedInValue = 2;
         var purchase;
         var watcher;
@@ -102,7 +102,7 @@ contract('Purchase', function(accounts) {
         });
     });
 
-    it("should be able to abort purchase and reclaim the ether", function() {
+    xit("should be able to abort purchase and reclaim the ether", function() {
         var purchase;
         var watcher;
         var notSeller = accounts[2];
