@@ -11,10 +11,10 @@ module.exports = {
       port: 8545,
       network_id: "*" // Match any network id
     },
-    // ropsten: {
-    //     network_id: 1,
-    //     provider: new WalletProvider(wallet, "http://45.76.197.72:8545"),
-    // }
+    ropsten: {
+        network_id: 1,
+        provider: new WalletProvider(wallet, "http://45.76.197.72:8545"),
+    }
   }
 };
 
